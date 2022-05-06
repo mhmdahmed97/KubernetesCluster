@@ -3,7 +3,7 @@
 #updating repositories and server
 sudo apt update
 sudo apt -y full-upgrade
-[ -f /var/run/reboot-required ] && sudo reboot -f
+
 
 #importing repository to ubuntu
 sudo apt -y install curl apt-transport-https
