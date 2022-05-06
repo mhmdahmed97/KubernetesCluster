@@ -45,6 +45,9 @@ sudo tee /etc/docker/daemon.json <<EOF
 }
 EOF
 
+rm /etc/containerd/config.toml
+systemctl restart containerd
+
 # Start and enable Services
 sudo systemctl daemon-reload 
 sudo systemctl restart docker
