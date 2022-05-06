@@ -6,6 +6,13 @@ Master Node:
 - chmod +x master-node.sh (make executable)
 - Installs Docker container run time 
 
+###### IMPORTANT ######
+When script completed in master Node, 
+Check tainted nodes and untaint them if required(By default master node is tainted i.e it cannot run any pods, and we need to run calico pods on master)
+Check taint with command: kubectl describe node <control-plane-node-name> | grep Taints
+In my case the result of command was : node-role.kubernetes.io/control-plane:NoSchedule
+Remove taints using command : kubectl taint nodes <control-plane-node-name> node-role.kubernetes.io/control-plane-
+
 Worker Node:
 - Clone script worker-node.sh in worker node
 - chmod +x worker-node.sh 
