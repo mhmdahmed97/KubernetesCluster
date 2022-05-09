@@ -59,7 +59,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl enable docker
 
-#Initializing master node
+
 lsmod | grep br_netfilter
 
 #Enable kubelet service.
@@ -68,6 +68,7 @@ sudo systemctl enable kubelet
 #Pull container images:
 sudo kubeadm config images pull
 
+#Initializing master node
 sudo kubeadm init \
   --pod-network-cidr=192.168.0.0/16
 
